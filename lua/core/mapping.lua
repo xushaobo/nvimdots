@@ -31,13 +31,17 @@ local core_map = {
 	["n|<A-]>"] = map_cr("vertical resize +5"):with_silent():with_desc("window: Resize +5 vertically"),
 	["n|<A-;>"] = map_cr("resize -2"):with_silent():with_desc("window: Resize -2 horizontally"),
 	["n|<A-'>"] = map_cr("resize +2"):with_silent():with_desc("window: Resize +2 horizontally"),
-	["n|<C-q>"] = map_cr("wq"):with_desc("edit: Save file and quit"),
-	["n|<A-S-q>"] = map_cr("q!"):with_desc("edit: Force quit"),
+	["n|<leader>w"] = map_cr("w"):with_desc("edit: Save file"),
+	["n|<leader>wq"] = map_cr("wq"):with_desc("edit: Save file and quit"),
+	["n|<leader>q"] = map_cr("q"):with_desc("edit: quit without save"),
+	["n|<leader>Q"] = map_cr("q!"):with_desc("edit: Force quit"),
 	["n|<leader>o"] = map_cr("setlocal spell! spelllang=en_us"):with_desc("edit: Toggle spell check"),
-	["n|tn"] = map_cr("tabnew"):with_noremap():with_silent():with_desc("tab: Create a new tab"),
-	["n|tk"] = map_cr("tabnext"):with_noremap():with_silent():with_desc("tab: Move to next tab"),
-	["n|tj"] = map_cr("tabprevious"):with_noremap():with_silent():with_desc("tab: Move to previous tab"),
-	["n|to"] = map_cr("tabonly"):with_noremap():with_silent():with_desc("tab: Only keep current tab"),
+	["n|<leader>gt"] = map_cr("bnext"):with_noremap():with_silent():with_desc("buffer: Move to next buffer"),
+	["n|gT"] = map_cr("bprevious"):with_noremap():with_silent():with_desc("buffer: Move to previous buffer"),
+	["n|<leader>bo"] = map_cr("BufferLineCloseOthers")
+		:with_noremap()
+		:with_silent()
+		:with_desc("buffer: Only keep current buffer"),
 	-- Insert mode
 	["i|<C-u>"] = map_cmd("<C-G>u<C-U>"):with_noremap():with_desc("edit: Delete previous block"),
 	["i|<C-b>"] = map_cmd("<Left>"):with_noremap():with_desc("edit: Move cursor to left"),
